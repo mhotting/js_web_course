@@ -1,0 +1,32 @@
+<%- include('./includes/header.ejs') %>
+<%- include('./includes/nav.ejs') %>
+    <h1>CHAT</h1>
+    <div class="chat-content">
+        <div class="chat-messages">
+            <% if (messages.length > 0) { %>
+                <% for (let message of messages) { %>
+                    <p><span class="username"><%= message.username %>:</span> <%= message.message %></p>
+                <% } %>
+            <% } else { %>
+                <p><span class="italic-small">No message in the chat for the moment!</span></p>
+            <% } %>
+        </div>
+        <div class="post-message">
+            <form action="/chat/post-message" method="POST">
+                <div class="message-input">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" value="<% if (username) { %><%= username %><% } %>" <% if (!username) { %>autofocus<% } %>>
+                </div>
+                <div class="message-input">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" <% if (username) { %>autofocus<% } %>></textarea>
+                </div>
+                <div class="message-input">
+                    <button class="btn" type="submit">Send</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+<%- include('./includes/end.ejs') %>

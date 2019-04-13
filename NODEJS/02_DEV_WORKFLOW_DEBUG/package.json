@@ -1,0 +1,16 @@
+{
+  "name": "2_dev_workflow_debug",
+  "version": "1.0.0",
+  "description": "Package practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "nodemone app.js"
+  },
+  "author": "Madipoupou",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
